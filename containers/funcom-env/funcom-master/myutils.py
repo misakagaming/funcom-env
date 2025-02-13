@@ -64,7 +64,7 @@ class batch_gen(keras.utils.Sequence):
         self.batch_size = config['batch_size']
         self.seqdata = seqdata
         self.mt = mt
-        self.allfids = list(seqdata['dt%s' % (tt)].keys())
+        self.allfids = list(seqdata['d%s' % (tt)].keys())
         self.num_inputs = config['num_input']
         self.config = config
         
