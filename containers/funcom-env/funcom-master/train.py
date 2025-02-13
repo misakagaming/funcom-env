@@ -127,7 +127,8 @@ if __name__ == '__main__':
     print('------------------------------------------')
 
     config = dict()
-    
+    for key, value in seqdata.items() :
+        print (key)
     config['tdatvocabsize'] = tdatvocabsize
     config['comvocabsize'] = comvocabsize
     config['smlvocabsize'] = smlvocabsize
