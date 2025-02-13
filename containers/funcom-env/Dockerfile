@@ -29,11 +29,12 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
 		python2.7 \
-        "python$PYTHON_VERSION-dev" \
-		"python$PYTHON_VERSION-distutils" \
+		"python$PYTHON_VERSION" \
+        python3-dev \
+		python3-distutils \
 		python3-setuptools \
         python3-pip \
-        "python$PYTHON_VERSION-venv" \
+        python3-venv \
 		libstdc++6 \
 		gcc-multilib\
 		libc6 \
