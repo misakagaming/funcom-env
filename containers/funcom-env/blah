@@ -5,9 +5,6 @@
 ### 1st part from https://gitlab.com/nvidia/cuda/blob/ubuntu18.04/10.0/base/Dockerfile
 
 FROM ubuntu:18.04
-# CHANGED
-#LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
-LABEL maintainer="tobycheese https://github.com/tobycheese/"
 
 # CHANGED: below, add the two repos from 17.04 and 16.04 so all packages are found
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg2 curl ca-certificates && \
