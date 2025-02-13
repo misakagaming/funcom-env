@@ -60,8 +60,8 @@ class AttentionGRUModel:
         # example, (300, 100, 100) means that for each of 300 examples in a batch, there are 100 words.
         # and each word is represented by a 100 length embedding vector.
         
-        #enc = GRU(self.recdims, return_state=True, return_sequences=True, activation='tanh', unroll=True)
-        enc = CuDNNGRU(self.recdims, return_state=True, return_sequences=True)
+        enc = GRU(self.recdims, return_state=True, return_sequences=True, activation='tanh', unroll=True)
+        #enc = CuDNNGRU(self.recdims, return_state=True, return_sequences=True)
         encout, state_h = enc(ee)
         
         # Tensor encout would normally have shape (batch_size, recdims), a recdims-length vector
@@ -82,8 +82,8 @@ class AttentionGRUModel:
         # done before starting the decoder.  Not sure how much this would affect quality.
         
         de = Embedding(output_dim=self.embdims, input_dim=self.comvocabsize, mask_zero=False)(com_input)
-        #dec = GRU(self.recdims, return_sequences=True, activation='tanh', unroll=True)
-        dec = CuDNNGRU(self.recdims, return_sequences=True)
+        dec = GRU(self.recdims, return_sequences=True, activation='tanh', unroll=True)
+        #dec = CuDNNGRU(self.recdims, return_sequences=True)
         decout = dec(de, initial_state=state_h)
         
         # Ok now things become more interesting.  This is the start of the attention mechanism.
