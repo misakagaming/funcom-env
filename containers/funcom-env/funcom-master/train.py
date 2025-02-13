@@ -127,13 +127,11 @@ if __name__ == '__main__':
     print('------------------------------------------')
 
     config = dict()
-    for key, value in seqdata.items() :
-        print (key)
     config['tdatvocabsize'] = tdatvocabsize
     config['comvocabsize'] = comvocabsize
     config['smlvocabsize'] = smlvocabsize
 
-    config['tdatlen'] = len(list(seqdata['dttrain'].values())[0])
+    config['tdatlen'] = len(list(seqdata['dtrain'].values())[0])
     config['comlen'] = len(list(seqdata['ctrain'].values())[0])
     config['smllen'] = len(list(seqdata['strain'].values())[0])
     
