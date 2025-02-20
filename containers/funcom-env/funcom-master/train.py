@@ -70,10 +70,11 @@ class HistoryCallback(Callback):
 
 if __name__ == '__main__':
 
-    timestart = int(round(time.time()))
+    #timestart = int(round(time.time()))
 
     parser = argparse.ArgumentParser(description='')
     parser.add_argument('--gpu', type=str, help='0 or 1', default='0')
+    parser.add_argument('--timestart', dest='timestart', type=int, default=1551297717)
     parser.add_argument('--batch-size', dest='batch_size', type=int, default=200)
     parser.add_argument('--epochs', dest='epochs', type=int, default=100)
     parser.add_argument('--model-type', dest='modeltype', type=str, default='vanilla')
@@ -85,6 +86,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     outdir = args.outdir
+    timestart = args.timestart
     dataprep = args.dataprep
     gpu = args.gpu
     batch_size = args.batch_size
